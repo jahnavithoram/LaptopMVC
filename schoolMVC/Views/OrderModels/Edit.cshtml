@@ -29,13 +29,13 @@
             </div>
             <input type="hidden" asp-for="ID" />
             <div class="form-group">
-                <label asp-for="ProductName" class="control-label" ></label>
+                <label asp-for="ProductName" class="control-label"></label>
                 <input asp-for="ProductName" class="form-control" readonly />
                 <span asp-validation-for="ProductName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SellerName" class="control-label"></label>
-                <input asp-for="SellerName" class="form-control" readonly/>
+                <input asp-for="SellerName" class="form-control" readonly />
                 <span asp-validation-for="SellerName" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -45,11 +45,21 @@
             </div>
             <div class="form-group">
                 <label asp-for="image" class="control-label"></label>
-                <input asp-for="image" class="form-control" readonly/>
-                <span asp-validation-for="image" class="text-danger" ></span>
+                <img src="@Model.image" alt="Sample Photo" id="Pic" />
+                <span asp-validation-for="image" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div class="form-group">
+                @using (Html.BeginForm("Delete", "OrderModels", new { ID = @Model.ID, ProductName = @Model.ProductName, SellerName = @Model.SellerName, prize = Model.prize, }, FormMethod.Post))
+                {
+                   
+                <input type="submit" value="BUY" class="btn btn-primary"onclick="alert('Purchase sucess happy shopping!')" />
+                    
+                   
+                }
+
             </div>
         </form>
     </div>

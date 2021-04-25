@@ -5,7 +5,7 @@
 }
 
 <h1>Delete</h1>
-
+<link rel="stylesheet" href="~/css/StyleSheet.css" />
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>ProductModel</h4>
@@ -33,7 +33,7 @@
             @Html.DisplayNameFor(model => model.image)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.image)
+            <img src="@Model.image" alt="Sample Photo" id="Pic" />
         </dd>
     </dl>
     

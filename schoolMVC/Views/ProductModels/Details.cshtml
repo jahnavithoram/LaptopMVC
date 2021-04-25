@@ -38,12 +38,13 @@
     </dl>
 </div>
 <div>
-    @using (Html.BeginForm("Create", "OrderModels", new { ID = @Model.ID, ProductName = @Model.ProductName, SellerName = @Model.SellerName, prize = Model.prize, }, FormMethod.Post))
+    
+    @using (Html.BeginForm("Create", "OrderModels", new { ID = @Model.ID, ProductName = @Model.ProductName, SellerName = @Model.SellerName, prize = @Model.prize, image=@Model.image}, FormMethod.Post))
     {
-        <button>ADDC</button>
+        <button >Add to CART</button>
     }
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    
     <a asp-action="Index">Back to List</a>
 </div>

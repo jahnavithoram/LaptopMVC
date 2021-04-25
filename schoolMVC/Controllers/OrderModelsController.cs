@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Server.HttpSys;
 using Microsoft.EntityFrameworkCore;
 using schoolMVC.Data;
 using schoolMVC.Models;
 
 namespace schoolMVC.Controllers
 {
+    [Authorize]
     public class OrderModelsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -150,5 +154,6 @@ namespace schoolMVC.Controllers
         {
             return _context.OrderModel.Any(e => e.ID == id);
         }
+       
     }
 }
